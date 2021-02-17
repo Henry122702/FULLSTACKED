@@ -3,10 +3,10 @@
 
 <body>
   <%- include("../partials/nav.ejs") %>
-
-  <div class="blogs content">
-    <h2>All Blogs</h2>
-
+  <section class = "all-blogs"> 
+   <div class="blogs">
+     <h2 class="blog-header">All Blogs</h2>
+       <div class="card-grid">
     <% if (blogs.length > 0) { %>
       <% blogs.forEach(blog => { %>
         <a class="single" href="/blogs/<%= blog._id %>">
@@ -17,9 +17,45 @@
     <% } else { %>
       <p>There are no blogs to display...</p>
     <% } %>
-    
+    </div>
   </div>
+</section>
 
+<section class = "all-blogs"> 
+  <div class="blogs">
+    <h2 class="blog-header">Front end</h2>
+      <div class="card-grid">
+   <% if (blogs.length > 0) { %>
+     <% blogs.forEach(blog => { %>
+       <a class="single" href="/blogs/<%= blog._id %>">
+       <h3 class="title"><%= blog.title %></h3>
+       <p class="snippet"><%= blog.snippet %></p>
+       </a>
+     <% }) %>
+   <% } else { %>
+     <p>There are no blogs to display...</p>
+   <% } %>
+   </div>
+ </div>
+</section>
+
+<section class = "all-blogs"> 
+  <div class="blogs">
+    <h2 class="blog-header">Back end</h2>
+      <div class="card-grid">
+   <% if (blogs.length > 0) { %>
+     <% blogs.forEach(blog => { %>
+       <a class="single" href="/blogs/<%= blog._id %>">
+       <h3 class="title"><%= blog.title %></h3>
+       <p class="snippet"><%= blog.snippet %></p>
+       </a>
+     <% }) %>
+   <% } else { %>
+     <p>There are no blogs to display...</p>
+   <% } %>
+   </div>
+  </div>
+  </section>
   <%- include("../partials/footer.ejs") %>
 </body>
 </html>

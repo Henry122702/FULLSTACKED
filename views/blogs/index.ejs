@@ -21,38 +21,39 @@
   </div>
 </section>
 
-<section class = "all-blogs"> 
-  <div class="blogs">
-    <h2 class="blog-header">Front end</h2>
-      <div class="card-grid">
-   <% if (blogs.length > 0) { %>
-     <% blogs.forEach(blog => { %>
-       <a class="single" href="/blogs/<%= blog._id %>">
-       <h3 class="title"><%= blog.title %></h3>
-       <p class="snippet"><%= blog.snippet %></p>
-       </a>
-     <% }) %>
-   <% } else { %>
-     <p>There are no blogs to display...</p>
-   <% } %>
+<section class = "videos"> 
+  <div class="rec-videos">
+    <h2 class="videos-header">Videos</h2>
+      <div class="videos-grid">
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/hdI2bqOjy3c" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/ENrzD9HAZK4" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/hu-q2zYwEYs" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/4yqu8YF29cU" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
    </div>
  </div>
 </section>
 
 <section class = "all-blogs"> 
   <div class="blogs">
-    <h2 class="blog-header">Back end</h2>
-      <div class="card-grid">
-   <% if (blogs.length > 0) { %>
-     <% blogs.forEach(blog => { %>
-       <a class="single" href="/blogs/<%= blog._id %>">
-       <h3 class="title"><%= blog.title %></h3>
-       <p class="snippet"><%= blog.snippet %></p>
-       </a>
-     <% }) %>
-   <% } else { %>
-     <p>There are no blogs to display...</p>
-   <% } %>
+    <h2 class="blog-header">Site Recommendations</h2>
+    <div class="card-grid">
+    <a class="fireship" target="_blank" href="https://fireship.io/">
+      <h3>Fireship</h3>
+      <p>Courses</p>
+         </a>     
+    <a class="freecodecamp" target="_blank" href="https://www.freecodecamp.org/">
+        <h3>freeCodeCamp</h3>
+        <p>Courses</p>
+        </a>
+    <a class="traversymedia" target="_blank" href="https://www.traversymedia.com/">
+      <h3>Traversy Media</h3>
+      <p>Courses</p>
+        </a>
+    <a class="thenetninja" target="_blank" href="https://www.thenetninja.co.uk/">
+      <h3 class="title">The Net Ninja</h3>
+      <p class="snippet">Courses</p>
+        </a>
+        </div>
    </div>
   </div>
   </section>

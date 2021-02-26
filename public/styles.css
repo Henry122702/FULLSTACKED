@@ -14,10 +14,11 @@ p, h1, h2, h3, a, ul{
   padding: 0;
   text-decoration: none;
   font-family: 'Montserrat', sans-serif;
+  
 }
 
 .title{
-  color: #F4FFF8;
+  color: #Ffee00;
   font-family: 'Montserrat', sans-serif;
 }
 
@@ -35,37 +36,39 @@ nav{
   top: 0;
   width: 60%;
   border-bottom: 1px solid #ddd;
-  text-transform: uppercase;
   color : #f4fff8;
   z-index: 100;
   position : fixed;
+  background-color: #1D1E2C;
 }
 nav ul{
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
-  color : #f4fff8;
+  color : #Ffee00;;
 }
 nav li{
   list-style-type: none;
   margin-left: 20px;
+  color :#Ffee00;
 }
 nav h1{
   font-size: 2em;
+  color : #Ffee00;
 }
 nav p, nav a{
   color: #f4fff8;
   font-weight: 300;
 }
 footer{
-  color: #f4fff8;
+  color: #Ffee00;;
   text-align: center;
   margin: 80px auto 20px;
 }
 h2{
   border-color: #ffffff;
   background-color: #1D1E2C;
-  color: #F4FFF8;
+  color: #Ffee00;
   display:flex;
   flex-basis:250px;
   flex-direction:column;
@@ -86,6 +89,7 @@ h3{
 
 .all-blogs{
   background-color:  #1D1E2C;
+  
 }
 
 .card-grid {
@@ -145,7 +149,7 @@ h3{
 .blog-header{
   border-color: #ffffff;
   background-color: #1D1E2C;
-  color: #F4FFF8;
+  color: #Ffee00;;
   display:flex;
   flex-basis:250px;
   flex-direction:column;
@@ -161,7 +165,7 @@ h3{
 
 .fireship{
   color:#000000;
-  background-color:#ff8800;
+  background-color:#ffde38;
   height: 350px;
   width: 400px;
   min-width: 250px;
@@ -177,7 +181,7 @@ h3{
 }
 
  .freecodecamp{
-  background-color:whitesmoke;
+  background-color: #e3e3e3;
   height: 350px;
   width: 400px;
   min-width: 250px;
@@ -196,8 +200,8 @@ h3{
  }
 
  .traversymedia{
-  color:white;
-  background-color:#df292d;
+  color:#ffffff;
+  background-color:#5cc9ff;
   height: 350px;
   width: 400px;
   min-width: 250px;
@@ -211,9 +215,11 @@ h3{
   clear: both;
   position: relative;
  }
+
+
  .thenetninja{
  color:whitesmoke;
- background-color:#17141d;
+ background-color:#40c473;
  height: 350px;
  width: 400px;
  min-width: 250px;
@@ -230,7 +236,7 @@ h3{
 /* details styles */
 .details{
   position: relative;
-  padding-top: 50px;
+  padding-top: 30px;
 }
 .delete{
   position: absolute;
@@ -246,7 +252,18 @@ h3{
   box-shadow: 1px 2px 3px rgba(0,0,0,0.2);
 }
 
+.content{
+  
+  border-radius: 25px;
+  margin-bottom: 50px;
+}
+
 /* create styles */
+
+label{
+  color : #ffde38;
+}
+
 .create-blog form{
   max-width: 400px;
   margin: 0 auto;
@@ -264,15 +281,22 @@ h3{
   margin-top: 24px;
 }
 textarea{
-  height: 120px;
+  height: 250px;
 }
 .create-blog button{
   margin-top: 20px;
-  background: crimson;
-  color: white;
+  background: #424242;
+  color: #Ffee00;
   padding: 6px;
   border: 0;
   font-size: 1.2em;
   cursor: pointer;
+  border-radius: 20px;
   font-family:'Montserrat', sans-serif;
+}
+
+.create-blog button:active{
+  background-color: black;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
 }

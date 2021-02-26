@@ -20,43 +20,10 @@
     </div>
   </div>
 </section>
+  <%- include("../partials/videos.ejs") %>
 
-<section class = "videos"> 
-  <div class="rec-videos">
-    <h2 class="videos-header">Videos</h2>
-      <div class="videos-grid">
-        <iframe width="560" height="315" src="https://www.youtube.com/embed/hdI2bqOjy3c" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-        <iframe width="560" height="315" src="https://www.youtube.com/embed/ENrzD9HAZK4" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-        <iframe width="560" height="315" src="https://www.youtube.com/embed/hu-q2zYwEYs" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-        <iframe width="560" height="315" src="https://www.youtube.com/embed/4yqu8YF29cU" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-   </div>
- </div>
-</section>
-
-<section class = "site-recommendations"> 
-  <div class="blogs">
-    <h2 class="blog-header">Additional Resources</h2>
-    <div class="card-grid">
-    <a class="single" target="_blank" href="https://www.traversymedia.com/">
-      <h3 class="title">Traversy Media</h3>
-      <p>Udemy Courses and YouTube Tutorials for Web Development Including Javascript, HTML ,CSS, Django and MERN Stack Application and more.</p>
-        </a>
-    <a class="single" target="_blank" href="https://fireship.io/">
-      <h3 class="title">Fireship</h3>
-      <p>Courses and Guides for Full-stack web development Including Firebase, Flutter, Firestore Data Modeling, and Angular 9 and more. </p>
-         </a>    
-    <a class="single" target="_blank" href="https://www.thenetninja.co.uk/">
-       <h3 class="title">The Net Ninja</h3>
-       <p class="snippet">Over 1000+ free dev video tutorials in youtube including tutorials for : Node.js, React Native, Flutter, Vue 3, Bulma CSS and more. </p>
-       </a> 
-    <a class="single" target="_blank" href="https://www.freecodecamp.org/">
-        <h3 class="title">freeCodeCamp</h3>
-        <p>Free Online Courses and YouTube Tutorials for HTML, CSS, Javascript, Python and More.</p>
-        </a>
-        </div>
-   </div>
-  </div>
-  </section>
+  <%- include("../partials/resources.ejs") %>
+  
   <%- include("../partials/footer.ejs") %>
 </body>
 </html>

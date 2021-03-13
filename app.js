@@ -2,7 +2,9 @@ const express = require('express');
 const morgan = require('morgan');
 const mongoose = require('mongoose');
 const blogRoutes = require('./routes/blogRoutes');
-
+const router = express.Router();
+const bcrypt = require('bcryptjs');
+const passport = require('passport');
 
 
 // express app
@@ -34,8 +36,18 @@ app.get('/about', (req, res) => {
   res.render('about', { title: 'About' });
 });
 
+app.get('/register', (req, res) => {
+  res.render('register', { title: 'Register' });
+});
+
+app.get('/login', (req, res) => {
+  res.render('login', { title: 'Login' });
+});
+
 //blog Routes
 app.use('/blogs', blogRoutes);
+
+
 
 // 404 page
 app.use((req, res) => {

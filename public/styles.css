@@ -253,7 +253,7 @@ textarea{
 }
 .create-blog button{
   margin-top: 20px;
-  background: #424242;
+  background: #464252;;
   color: #fffab3;
   padding: 6px;
   border: 0;
@@ -268,6 +268,7 @@ textarea{
   box-shadow: 0 5px #666;
   transform: translateY(4px);
 }
+
 
 /* About Us Styles */
 
@@ -353,4 +354,46 @@ textarea{
 
 .filler{
   opacity: 0;
+}
+
+/* 404 style */
+.not-found-content{
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+/* Login and Register Style */
+.login-header{
+  text-align: center;
+  color:#fffab3;
+}
+
+
+.register-prompt-container{
+  text-align: center;
+  color:#fffab3;
+  padding: 50px 0px 0px;
+  margin: 0px 721.5px;
+}
+
+.register-prompt{
+  text-align: center;
+  color:#fffab3;
+}
+
+
+.login-link {
+  text-align: center;
+  color:#f4fff8;
+}
+
+.login-link:hover{
+  color:#fffab3;
 }

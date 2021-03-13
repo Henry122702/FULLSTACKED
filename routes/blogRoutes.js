@@ -1,8 +1,11 @@
 const express = require('express');
 const blogController = require('../controllers/blogController');
-
+const bcrypt = require('bcryptjs');
+const passport = require('passport');
 
 const router = express.Router();
+
+
 
 
 router.get('/', blogController.blog_index );

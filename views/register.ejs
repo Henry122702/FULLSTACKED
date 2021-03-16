@@ -4,9 +4,9 @@
 <body>
   <div class="create-blog content">
   <h1 class="login-header">Register</h1>
+  <%- include ("./partials/messages") %>
  <form action="/users/register" method="POST">
- 
-    <div class="form-group">
+    <div>
       <label for="name">Name</label>
       <input
         type="name"
@@ -47,7 +47,7 @@
     </form>
     </div>
     <div class ="register-prompt-container">
-    <p class="register-prompt">Have An Account? <a class ="login-link" href="login">Login</a></p>
+    <p class="register-prompt">Have An Account? <a class ="login-link" href="/users/login">Login</a></p>
       
       </div>
     <%- include("./partials/footer.ejs") %>

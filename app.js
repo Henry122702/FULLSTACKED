@@ -2,17 +2,28 @@ const express = require('express');
 const morgan = require('morgan');
 const mongoose = require('mongoose');
 const blogRoutes = require('./routes/blogRoutes');
-const router = express.Router();
-const bcrypt = require('bcryptjs');
+const flash = require('connect-flash');
+const session = require('express-session');
 const passport = require('passport');
 
 
 // express app
 const app = express();
 
+
+
+//middleware & static files
+app.use(express.static('public'));
+app.use(express.urlencoded ({ extended: true}));
+app.use(morgan('dev'));
+
+
+//passport config
+require('./config/passsport')(passport)
+
 //connect to mongodb
-const dbuRI = 'mongodb+srv://user-1:test@clusterstrukdata-sbdsem.ewtfk.mongodb.net/StrukData-SBD-sem2?retryWrites=true&w=majority';
-mongoose.connect(dbuRI, { useNewUrlParser: true, useCreateIndex: true, useUnifiedTopology: true })
+const dbURI = require('./config/keys').mongoURI;
+mongoose.connect(dbURI, { useNewUrlParser: true, useCreateIndex: true, useUnifiedTopology: true })
  .then((result) => app.listen(3000))
  .catch((err) => console.log(err))
 
@@ -22,10 +33,32 @@ mongoose.connect(dbuRI, { useNewUrlParser: true, useCreateIndex: true, useUnifie
 // register view engine
 app.set('view engine', 'ejs');
 
-//middleware & static files
-app.use(express.static('public'));
-app.use(express.urlencoded ({ extended: true}));
-app.use(morgan('dev'));
+
+
+
+// Express session
+app.use(
+  session({
+    secret: 'secret',
+    resave: true,
+    saveUninitialized: true
+  })
+);
+
+// Passport middleware
+app.use(passport.initialize());
+app.use(passport.session());
+
+// Connect flash
+app.use(flash());
+
+// Global variables
+app.use(function(req, res, next) {
+  res.locals.success_msg = req.flash('success_msg');
+  res.locals.error_msg = req.flash('error_msg');
+  res.locals.error = req.flash('error');
+  next();
+});
 
 //routes 
 app.get('/', (req, res) => {
@@ -36,17 +69,11 @@ app.get('/about', (req, res) => {
   res.render('about', { title: 'About' });
 });
 
-app.get('/register', (req, res) => {
-  res.render('register', { title: 'Register' });
-});
 
-app.get('/login', (req, res) => {
-  res.render('login', { title: 'Login' });
-});
 
 //blog Routes
 app.use('/blogs', blogRoutes);
-
+app.use('/users', require('./routes/users.js'));
 
 
 // 404 page

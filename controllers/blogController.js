@@ -1,4 +1,6 @@
 const Blog = require('../models/blog');
+const User = require('../models/User');
+
 
 const blog_index = (req, res) =>{
     Blog.find().sort ({ createdAt: -1 })
@@ -37,6 +39,7 @@ const blog_create_post = (req, res) =>{
     });
 }
 
+
 const blog_delete = (req, res) =>{
     const id = req.params.id;
   
@@ -50,11 +53,10 @@ const blog_delete = (req, res) =>{
 }
 
 
-
 module.exports = {
     blog_index,
     blog_details,
     blog_create_get,
     blog_create_post,
-    blog_delete
+    blog_delete,
 }

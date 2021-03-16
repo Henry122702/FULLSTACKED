@@ -397,3 +397,9 @@ textarea{
 .login-link:hover{
   color:#fffab3;
 }
+
+/* Messages Styles */
+.messages{
+  color: #fffab3;
+  align-self: center;
+}

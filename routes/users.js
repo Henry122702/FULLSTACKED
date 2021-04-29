@@ -2,19 +2,19 @@ const express = require('express');
 const router = express.Router();
 const bcrypt = require('bcryptjs');
 const passport = require('passport');
-// Load User model
+//* Load User model
 const User = require('../models/User');
 
 
-// Register Page
+//* Register Page
 router.get('/register', (req, res) => { res.render('register', { title: 'Register' });
 });
 
-// Login Page
+//* Login Page
 router.get('/login', (req, res) => { res.render('login', { title: 'Login' });
 });
 
-// Register Handle
+//* Register Handle
 router.post('/register', ( req, res) => {
     const { name, password, password2 } = req.body;
     let errors = [];
@@ -55,7 +55,7 @@ router.post('/register', ( req, res) => {
             name,
             password
           });
-  
+//* Password Encryption (Hashing)
           bcrypt.genSalt(10, (err, salt) => {
             bcrypt.hash(newUser.password, salt, (err, hash) => {
               if (err) throw err;
@@ -73,7 +73,7 @@ router.post('/register', ( req, res) => {
     }
 });
 
-// Login
+//* Login
 router.post('/login', (req, res, next) => {
   passport.authenticate('local', {
     successRedirect: '/blogs',
@@ -82,7 +82,7 @@ router.post('/login', (req, res, next) => {
   })(req, res, next);
 });
 
-// Logout
+//* Logout
 router.get('/logout', (req, res) => {
   req.logout();
   req.flash('success_msg', 'You are logged out');

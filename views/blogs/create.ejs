@@ -1,8 +1,11 @@
 <html lang="en">
+<!--* include head.ejs as a part of this file -->
 <%- include("../partials/head.ejs") %>
 
 <body>
+<!--* include nav.ejs as a part of this file -->
   <%- include("../partials/nav.ejs") %>
+  
 <!--* Handles the creation of a blog-->
   <div class="create-blog content">
     <form action="/blogs" method="POST">

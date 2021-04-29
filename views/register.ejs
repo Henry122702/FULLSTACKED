@@ -4,7 +4,9 @@
 <body>
   <div class="create-blog">
   <h1 class="login-header">Register</h1>
+   <!--* Error Messages -->
   <%- include ("./partials/messages") %>
+  <!--* Posts the data inputted in the form to the database via POST -->
  <form action="/users/register" method="POST">
     <div>
       <label for="name">Name</label>
@@ -47,8 +49,8 @@
     </form>
     </div>
     <div class ="register-prompt-container">
+<!--* Sends the user to the Login page if the user does have an account-->
     <p class="register-prompt">Have An Account? <a class ="login-link" href="/users/login">Login</a></p>
-      
       </div>
     <%- include("./partials/footer.ejs") %>
   </body>

@@ -15,4 +15,7 @@ router.get('/:id', ensureAuthenticated, blogController.blog_details );
 router.delete('/:id', ensureAuthenticated, blogController.blog_delete );
 
 
-  module.exports = router;
+module.exports = router;
+
+
+

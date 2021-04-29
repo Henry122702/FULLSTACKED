@@ -4,15 +4,17 @@
   <%- include("../partials/nav.ejs") %>
   <div class="details content">
     <h2 class = "detail-title"><%= blog.title %></h2>
-    <div class="content">
-      <p><%= blog.body %></p>
-    </div>
+      <div class="content">
+        <p><%= blog.body %></p>
+      </div>
+<!--* Button for handling article deletions-->
     <a class="delete" data-doc="<%= blog._id%>">
       <img src="/delete-24px (1).svg" alt="delete icon">
     </a>
   </div>
   <%- include("../partials/footer.ejs") %>
-  <!--* Script for handling article deletions-->
+
+<!--* Script for handling article deletions-->
   <script>
     const trashcan = document.querySelector('a.delete');
     trashcan.addEventListener('click', (e) => {

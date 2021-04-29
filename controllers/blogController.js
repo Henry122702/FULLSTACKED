@@ -1,7 +1,7 @@
 const Blog = require('../models/blog');
 const User = require('../models/User');
 
-
+//* Code for getting and rendering all post articles on index
 const blog_index = (req, res) =>{
     Blog.find().sort ({ createdAt: -1 })
     .then((result) =>{
@@ -11,7 +11,7 @@ const blog_index = (req, res) =>{
       console.log(err);
     });
 }
-
+//* Code for getting and rendering the details on one post article on click or redirecr user to 404 page if  a post does not exist
 const blog_details = (req, res) =>{
     const id = req.params.id;
     Blog.findById(id)
@@ -23,10 +23,11 @@ const blog_details = (req, res) =>{
      });
 }
 
+//* Code for getting and rendering the create new post page
 const blog_create_get = (req, res) =>{
     res.render('blogs/create', { title: 'Create a new blog' });
 }
-
+//* Code for posting a new page
 const blog_create_post = (req, res) =>{
     const blog = new Blog(req.body);
   
@@ -38,8 +39,7 @@ const blog_create_post = (req, res) =>{
       console.log(err);
     });
 }
-
-
+//* Code for deleting a new page
 const blog_delete = (req, res) =>{
     const id = req.params.id;
   
@@ -51,7 +51,6 @@ const blog_delete = (req, res) =>{
         console.log(err);
       });
 }
-
 
 module.exports = {
     blog_index,

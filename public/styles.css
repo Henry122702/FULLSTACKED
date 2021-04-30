@@ -8,6 +8,7 @@ body{
   overflow-x:hidden ;
 }
 
+
 body::-webkit-scrollbar {
   width: 10px;
   height: 10px;
@@ -199,6 +200,7 @@ h3{
 .details{
   position: relative;
   padding-top: 30px;
+  padding-left: 150px;
 }
 .delete{
   position: absolute;
@@ -215,9 +217,9 @@ h3{
 }
 
 .content{
-  
   border-radius: 25px;
   margin-bottom: 50px;
+  margin-right: 275px;
 }
 
 .detail-title{
